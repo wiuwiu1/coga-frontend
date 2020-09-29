@@ -133,15 +133,8 @@ public class WindowManager {
     public void initRoom(){
         room = new Room(7, new Vector3f(0, 6f, 0));
 
-        room.setFurniture(new Fridge(), new Vector3f(0, 1, 0));
+
         Oven oven = new Oven();
-        room.setFurniture(oven, new Vector3f(0, 2, 0));
-        oven.setEntity(new Meal());
-
-        room.setFurniture(new Fridge(), new Vector3f(1, 2, 0));
-        room.setFurniture(new Fridge(), new Vector3f(2, 5, 0));
-
-        oven = new Oven();
         room.setFurniture(oven, new Vector3f(3, 1, 0));
         oven.setEntity(new Meal());
 

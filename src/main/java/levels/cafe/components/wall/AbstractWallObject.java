@@ -7,12 +7,12 @@ import levels.cafe.components.ZLevels;
 
 public abstract class AbstractWallObject extends AbstractComponent {
 
-
     public final static float VERTICAL_TILE_OFFSET = 1;
     public final static float HORIZONTAL_TILE_OFFSET = 2;
     public final static float HEIGHT = 10;
 
     protected Vector3f startVector = new Vector3f(0, 0, 0);
+    protected WallOrientation wallOrientation;
 
     @Override
     protected VertexArray generateVertexArray() {
@@ -39,15 +39,4 @@ public abstract class AbstractWallObject extends AbstractComponent {
         };
         return new VertexArray(vertices, indices, tcs);
     }
-
-    public void configure(Vector3f startVector){
-        this.zLevel = ZLevels.WALL_TILE.getLevel() + alterZ(startVector.z);
-
-        this.startVector = startVector;
-        this.startVector.z = zLevel;
-
-        this.vertexArray = generateVertexArray();
-    }
-
-    protected abstract float alterZ(float z);
 }

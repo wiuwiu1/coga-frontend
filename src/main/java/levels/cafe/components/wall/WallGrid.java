@@ -2,7 +2,9 @@ package levels.cafe.components.wall;
 
 import engine.maths.Vector3f;
 import levels.cafe.components.ZLevels;
+import org.lwjgl.system.CallbackI;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class WallGrid {
@@ -17,4 +19,19 @@ public class WallGrid {
         this.startVector = startVector;
     }
 
+    public void generate(){
+        this.wallTiles = new ArrayList<>();
+        wallTiles.add(new WallTile(new Vector3f(startVector.x, startVector.y, 1), WallOrientation.LEFT));
+        wallTiles.add(new WallTile(new Vector3f(startVector.x, startVector.y, 1), WallOrientation.RIGHT));
+        /*
+        for (int x = 0; x < tileRowSize; x++) {
+            wallTiles.add(new WallTile(new Vector3f(startVector.x, startVector.y, Z_LEVEL), WallOrientation.LEFT));
+            wallTiles.add(new WallTile(new Vector3f(startVector.x, startVector.y, Z_LEVEL), WallOrientation.RIGHT));
+        }
+         */
+    }
+
+    public List<WallTile> getWallTiles() {
+        return wallTiles;
+    }
 }

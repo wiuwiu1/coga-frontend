@@ -4,6 +4,7 @@ import engine.Render;
 import engine.maths.Vector3f;
 import levels.cafe.components.ground.*;
 import levels.cafe.components.wall.WallGrid;
+import levels.cafe.components.wall.WallTile;
 
 import java.util.List;
 
@@ -18,8 +19,12 @@ public class Room {
     public Room(int tileRowSize, Vector3f startVector) {
         this.tileRowSize = tileRowSize;
         this.startVector = startVector;
+
         this.groundGrid = new GroundGrid(tileRowSize, startVector);
         this.groundGrid.generate();
+
+        this.wallGrid = new WallGrid(tileRowSize, startVector);
+        this.wallGrid.generate();
     }
 
     public void setFurniture(AbstractFurniture abstractFurniture, Vector3f groundVector){
@@ -37,6 +42,10 @@ public class Room {
                     render.addComponent(furniture.getEntity());
                 }
             }
+        }
+        List<WallTile> wallTiles = wallGrid.getWallTiles();
+        for(WallTile wallTile : wallTiles){
+            wallTile.render();
         }
     }
 
