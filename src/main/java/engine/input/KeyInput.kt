@@ -11,6 +11,7 @@ import org.lwjgl.glfw.GLFWKeyCallback
 import java.util.*
 
 class KeyInput(engine: Engine?) : GLFWKeyCallback() {
+
     override fun invoke(window: Long, key: Int, scancode: Int, action: Int, mods: Int) {
         if (action != GLFW.GLFW_RELEASE) {
             if (controls.containsKey(key)) {

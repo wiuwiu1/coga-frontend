@@ -15,6 +15,7 @@ public class Shader {
     public final static int TEXTURE_ATTRIBUTE = 1;
 
     public static Shader roomShader;
+    public static Shader mousePickingShader;
 
     private final int ID;
     private Map<String, Integer> locationCache = new HashMap<>();
@@ -25,6 +26,7 @@ public class Shader {
 
     public static void loadAllShader(){
         roomShader = new Shader("shaders/room.vert", "shaders/room.frag");
+        mousePickingShader = new Shader("shaders/room.vert", "shaders/mousePicking.frag");
     }
 
     public void setUniform1i(String name, int value){

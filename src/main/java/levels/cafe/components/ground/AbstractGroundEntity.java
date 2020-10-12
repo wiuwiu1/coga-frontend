@@ -1,6 +1,6 @@
 package levels.cafe.components.ground;
 
-import levels.cafe.components.ZLevels;
+import levels.cafe.ZLevels;
 
 public abstract class AbstractGroundEntity extends AbstractGroundObject{
 

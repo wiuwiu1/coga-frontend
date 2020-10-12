@@ -1,8 +1,7 @@
 package levels.cafe.components.wall;
 
 import engine.maths.Vector3f;
-import levels.cafe.components.ZLevels;
-import org.lwjgl.system.CallbackI;
+import levels.cafe.ZLevels;
 
 import java.util.ArrayList;
 import java.util.List;

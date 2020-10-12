@@ -3,7 +3,6 @@ package levels.cafe.components.wall;
 import engine.AbstractComponent;
 import engine.graphics.VertexArray;
 import engine.maths.Vector3f;
-import levels.cafe.components.ZLevels;
 
 public abstract class AbstractWallObject extends AbstractComponent {
 

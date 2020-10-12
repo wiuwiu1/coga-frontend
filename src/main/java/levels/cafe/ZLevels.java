@@ -1,4 +1,4 @@
-package levels.cafe.components;
+package levels.cafe;
 
 public enum ZLevels {
 

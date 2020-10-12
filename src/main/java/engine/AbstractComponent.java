@@ -4,6 +4,8 @@ import engine.graphics.Shader;
 import engine.graphics.Texture;
 import engine.graphics.VertexArray;
 
+import java.awt.*;
+
 public abstract class AbstractComponent {
 
     public VertexArray vertexArray;
@@ -19,6 +21,10 @@ public abstract class AbstractComponent {
         vertexArray.render();
         Shader.roomShader.disable();
         texture.unbind();
+    }
+
+    public void mousePickingRender(Color mousePickingColor){
+        //todo
     }
 
 }

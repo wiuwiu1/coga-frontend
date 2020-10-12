@@ -3,6 +3,7 @@ package engine.graphics;
 import engine.utils.BufferUtils;
 
 import javax.imageio.ImageIO;
+import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -12,11 +13,10 @@ import static org.lwjgl.opengl.GL11.*;
 import static org.lwjgl.stb.STBImage.stbi_set_flip_vertically_on_load;
 
 public class Texture {
-
     private int width, height;
     private final int TEXTURE;
 
-    public Texture(String path){
+    Texture(String path){ ;
         TEXTURE = loadTexture(path);
     }
 
@@ -45,7 +45,7 @@ public class Texture {
 
         int result = glGenTextures();
         glBindTexture(GL_TEXTURE_2D, result);
-        //later to GL_NEAREST
+        //todo later to GL_NEAREST
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
         glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, BufferUtils.createIntBuffer(data));

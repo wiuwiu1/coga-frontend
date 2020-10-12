@@ -8,10 +8,8 @@ public class MoveDownControl extends AbstractControl {
 
     private final static float SPEED = 0.1f;
 
-    private Engine engine;
-
     public MoveDownControl(Engine engine){
-        this.engine = engine;
+        super(engine);
     }
 
     @Override

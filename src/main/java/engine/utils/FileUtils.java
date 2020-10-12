@@ -1,7 +1,5 @@
 package engine.utils;
 
-import sun.util.locale.provider.JRELocaleProviderAdapter;
-
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;

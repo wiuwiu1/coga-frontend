@@ -1,9 +1,8 @@
 package levels.cafe.components.ground;
 
 import engine.maths.Vector3f;
-import levels.cafe.components.ZLevels;
-import levels.cafe.components.ground.AbstractFurniture;
-import levels.cafe.components.ground.GroundTile;
+import levels.cafe.Player;
+import levels.cafe.ZLevels;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,6 +13,7 @@ public class GroundGrid {
     private int tileRowSize;
     private Vector3f startVector;
     private List<GroundTile> groundTiles;
+    private Player player;
 
     public GroundGrid(int tileRowSize, Vector3f startVector){
         this.tileRowSize = tileRowSize;
@@ -24,8 +24,8 @@ public class GroundGrid {
         groundTiles = new ArrayList<>();
         for (int x = 0; x < tileRowSize; x++) {
             for (int y = 0; y < tileRowSize; y++) {
-                groundTiles.add(new GroundTile(new Vector3f(startVector.x + GroundTile.HORIZONTAL_OFFSET * x - GroundTile.HORIZONTAL_OFFSET * y ,
-                        startVector.y - GroundTile.VERTICAL_OFFSET * x - GroundTile.VERTICAL_OFFSET * y,
+                groundTiles.add(new GroundTile(new Vector3f(startVector.x + GroundTile.Companion.getHORIZONTAL_OFFSET() * x - GroundTile.Companion.getHORIZONTAL_OFFSET() * y ,
+                        startVector.y - GroundTile.Companion.getVERTICAL_OFFSET() * x - GroundTile.Companion.getVERTICAL_OFFSET() * y,
                         Z_LEVEL + ((x + y) * ZLevels.GROUND_OFFSET_ADD.getLevel()))));
             }
         }

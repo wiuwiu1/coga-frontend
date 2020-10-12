@@ -1,8 +1,12 @@
 package engine.input.controls;
 
-public abstract class AbstractControl {
+import engine.Engine;
 
-    public AbstractControl(){
+public abstract class AbstractControl {
+    protected Engine engine;
+
+    public AbstractControl(Engine engine){
+        this.engine = engine;
     }
 
     public abstract void run();

@@ -1,9 +1,10 @@
 package engine;
 
 import engine.input.KeyInput;
+import engine.input.MouseInput;
 import engine.input.MouseScrollInput;
 import engine.maths.Vector3f;
-import levels.cafe.components.Room;
+import levels.cafe.Room;
 import levels.cafe.components.ground.furniture.Fridge;
 import levels.cafe.components.ground.Meal;
 import levels.cafe.components.ground.furniture.Oven;
@@ -55,6 +56,7 @@ public class WindowManager {
 
         glfwSetKeyCallback(window, new KeyInput(engine));
         glfwSetScrollCallback(window, new MouseScrollInput(engine));
+        glfwSetMouseButtonCallback(window, new MouseInput(engine));
 
         // Get the thread stack and push a new frame
         try ( MemoryStack stack = stackPush() ) {
@@ -131,7 +133,7 @@ public class WindowManager {
     }
 
     public void initRoom(){
-        room = new Room(7, new Vector3f(0, 6f, 0));
+        room = new Room(10, new Vector3f(0, 6f, 0));
 
 
         Oven oven = new Oven();
@@ -149,6 +151,6 @@ public class WindowManager {
         oven.setEntity(new Meal());
 
         room.setFurniture(new Fridge(), new Vector3f(6, 3, 0));
-        room.updateRoom();
+        room.updateLevel();
     }
 }
